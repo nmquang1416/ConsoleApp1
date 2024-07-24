@@ -1,7 +1,6 @@
 // See https://aka.ms/new-console-template for more information
 
 using ConsoleApp1.exercise01;
-using ConsoleApp1.exercise02;
 
 People people = new People();
 
@@ -38,9 +37,18 @@ Console.Write("Enter a string: ");
 string inputString = Console.ReadLine();
 
 Console.Write("Enter a word to search: ");
-string wordToSearch = Console.ReadLine();
+string searchWord = Console.ReadLine();
 
-Console.WriteLine();
+int count = 0;
+int index = inputString.IndexOf(searchWord, 0);
+
+while (index!= -1)
+{
+     count++;
+     index = inputString.IndexOf(searchWord, index + 1);
+}
+
+Console.WriteLine($"Word found {count} times in the string.");
 
 
 
